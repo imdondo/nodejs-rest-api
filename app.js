@@ -2,10 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Note = require('./models/note.model');
 var fs = require("fs");
+var cors = require('cors');
 const notes = require("./models/notes.json"); 
 // create express app
 const app = express();
-
+app.use(cors());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
